@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+				<!--
+								MegaCalc;
+								v: 1.0;
+				-->
+				<meta charset="utf-8">
+				<title>MegaCalc</title>
+				<style>
+								#bmore {
+												background-color: #eaeaff;
+								} 
+								.btnwhite {
+												background-color: white;
+								} 
+								body {
+												background-color: #eaffff;
+								} 
+								.numbers > button :hover {
+												border-color: #1524ff;
+								} 
+								.numbers > button {
+												width: 77px;
+												height: 77px;
+												margin-left: -4px;
+												margin-top: 0px;
+												margin-right: -4px;
+												border-width: 1px;
+												border-style: solid;	
+												font-family: Arial;
+												font-size: 20px;							
+								} 
+								#res {
+												border-color: #556fff;
+												border-style: solid;
+												border-radius: 15px;
+												font-family: Arial;
+												font-size: 37px;
+												width: 310px;
+												padding: 7px;
+												margin: 5px;
+												background-color: #eaffff;
+								} 
+								#r {
+												background-color: #bfffff;
+								} 
+								#footer {
+												background-color: #87CEEB;
+												
+												padding: 0px;
+												margin-left: -8px;
+												width: 105%;
+												margin-bottom: -8px;
+								} 
+								#hr1 {
+												border-color: #bfeaff;
+												width: 70%;
+								} 
+								#buttond {
+												background-color: #eaffff;
+												color: #2a2fff;
+												font-family: Arial;
+												font-size: 20px;
+												border-color: #7f98ff;
+												border-radius: 20px 20px 20px 20px;
+												margin: 10px;
+												padding: 10px;
+												border-width: 3px;
+												box-shadow: 0 0 17px #0c0c0c;
+								} 
+								#indent {
+												height: 1px;
+								} 
+								#c1 {
+												font-family: Arial;
+												font-size: 17px;
+												margin: 10px;
+												background-color: #87CEEB;
+								} 
+								#bcenter {
+												border-style: groove;
+												border-color: blue;
+												border-width: 3px;
+												width: 337px;
+												background-color: #bfeaff;
+												box-shadow: 0 0 17px black;
+								} 
+								#bc {
+												background-color: #ffbfbf;
+								} 
+								.btngrey {
+												background-color: #eaeaea;
+								} 
+								#hstr {
+												background-color: #eaffea; 
+												width: 296px;
+												height: 40px;
+												margin-left: -4px;
+												margin-top: 0px;
+												margin-right: -4px;
+												border-width: 1px;
+												border-style: solid;	
+												font-family: Arial;
+												font-size: 20px;
+								} 
+								#historylist {
+												display: none;
+								} 
+								#hstr :hover {
+												border-color: #404fff;
+												} 
+								#txt {
+												width: 290px;
+												height: 200px;
+												background-color: white;
+								} 
+								#hidetxt {
+												width: 296px;
+												height: 30px;
+												margin-left: -4px;
+												margin-top: 0px;
+												margin-right: -4px;
+												border-width: 1px;
+												border-style: solid;	
+												font-family: Arial;
+												font-size: 15px;					
+								} 
+								#morelist {
+												display: none;
+								} 
+								#bcbrt {
+												margin: -4px;
+												background-color: #eaeaea;
+								} 
+								#inrad {
+												background-color: #ffffea; 
+												width: 296px;
+												height: 30px;
+												margin-left: -4px;
+												margin-top: 0px;
+												margin-right: -4px;
+												border-width: 1px;
+												border-style: solid;	
+												font-family: Arial;
+												font-size: 17px;
+								} 
+								#hideInRad {
+												display: none;		 
+								} 
+								#hideInRad :hover {
+												border-color: #1524ff;
+								} 
+				</style>
+</head>
+<body> 
+				<center>
+				<center id="bcenter">
+				<input type="search" id="res">
+				<div>
+								<div class="numbers">
+												<button id="bc">C</button>
+												<button id="bchar" style="background-color: #ffd5bf;"><×	</button>
+												<button id="bp1" class="btngrey">(</button>
+												<button id="bp2" class="btngrey">) </button>
+								</div>
+								<div class="numbers">
+												<button id="sqrt" class="btngrey">√(x)</button>
+												<button id="xin2" class="btngrey">x²</button>
+												<button id="b1dx" class="btngrey">1/x</button>
+												<button id="bdd" class="btngrey">/</button>
+								</div>
+								<div class="numbers">
+												<button id="b7" class="btnwhite">7</button>
+												<button id="b8" class="btnwhite">8</button>
+										   <button id="b9" class="btnwhite">9</button>
+										   <button id="bmu" class="btngrey">×</button>
+								</div>
+								<div class="numbers">
+												<button id="b4" class="btnwhite">4</button>
+												<button id="b5" class="btnwhite">5</button>
+												<button id="b6" class="btnwhite">6</button>
+												<button id="bm" class="btngrey">-</button>
+								</div>
+								<div class="numbers">
+												<button id="b1" class="btnwhite">1</button>
+												<button id="b2" class="btnwhite">2</button>
+												<button id="b3" class="btnwhite">3</button>
+												<button id="bp" class="btngrey">+</button>
+								</div>
+								<div class="numbers">
+												<button id="bmore">More</button>
+												<button id="b0" class="btnwhite">0</button>
+												<button id="bt" class="btnwhite">.</button>
+												<button id="r">=</button>
+								</div>
+								</div>
+								
+								<div id="morelist">
+												<div class="numbers">
+																<button class="btngrey" id="bper">%</button>
+																<button class="btngrey" id="bpi">π</button>
+																<button class="btngrey" id="be">e</button>
+																<button class="btngrey" id="bfi">φ</button>
+												</div>
+												<div class="numbers">
+																<button class="btngrey" id="bmd">|x|<sup></sup></button>
+																<button class="btngrey" id="bxsuby">x<sup>y</sup></button>
+																<button class="btngrey" id="bcbrt">∛<sup></sup></button>
+																<button class="btngrey" id="blog">log()<sup></sup></button>
+												</div>
+												<div id="inDeg"> 
+												<div class="numbers">
+																<button class="btngrey" id="bsin">sin()</button>
+																<button class="btngrey" id="bcos">cos()</button>
+																<button class="btngrey" id="btan">tan()</button>
+																<button class="btngrey" id="bcot">cot()</button>
+												</div>
+												</div>
+												<div id="hideInRad">
+												<div class="numbers">			
+																<button class="btngrey" id="bsinInRad">sin()</button>
+																<button class="btngrey" id="bcosInRad">cos()</button>
+																<button class="btngrey" id="btanInRad">tan()</button>
+																<button class="btngrey" id="bcotInRad">cot()</button>
+												</div>
+												</div>
+												<button id="inrad">Deg</button>
+								</div>
+
+								<div> 
+												<button id="hstr">History ∙ </button>
+												<div id="historylist">
+																<textarea id="txt" disabled></textarea>
+																<button id="clrt">Clear</button>
+																
+																
+												</div>
+								</div>
+				
+				<br>
+				</center>
+				</center>
+				
+				
+				<br><br><br><br><br><br>
+				<div id="footer">
+								<center>
+																<button id="buttond">Написать отзыв разработчику</button>
+												<center><hr id="hr1"></center>
+												<div id="c1">
+																&copy Andrew K., 2021
+												</div>
+												<div id="indent"></div>
+								</center>
+				</div>
+				
+				
+				<script>
+								buttond.onclick = function() {
+								document.location.href = "mailto:Sites.and.Apps.Dev.Company.A@gmail.com";
+				} 
+								let exp = "";
+								let exptxt = "";
+								let vfunc = function(num) {
+												let value1 = document.getElementById("res").value; 	document.getElementById("res").value = value1 + num;
+												} 
+								
+								b7.onclick = function() {
+												let result = vfunc("7");
+												exp = exp + "7";
+												exptxt = exptxt + "7";
+												
+												} 
+								b6.onclick = function() {
+												let result = vfunc("6");
+												exp = exp + "6";
+												exptxt = exptxt + "6"; 
+												} 
+								b5.onclick = function() {
+												let result = vfunc("5");
+												exp = exp + "5";
+												exptxt = exptxt + "5";
+												}  
+								b4.onclick = function() {
+												let result = vfunc("4");
+												exp = exp + "4";
+												exptxt = exptxt + "4";
+												} 
+								b3.onclick = function() {
+												let result = vfunc("3");
+												exp = exp + "3";
+												exptxt = exptxt + "3";
+												} 
+								b2.onclick = function() {
+												let result = vfunc("2");
+												exp = exp + "2";
+												exptxt = exptxt + "2";
+												} 
+								b1.onclick = function() {
+												let result = vfunc("1");
+												exp = exp + "1";
+												exptxt = exptxt + "1";
+												} 
+								b0.onclick = function() {
+												let result = vfunc("0");
+												exp = exp + "0";
+												exptxt = exptxt + "0";
+												} 
+								bc.onclick = function() {
+												document.getElementById("res").value = "";
+												exp = "";
+												exptxt = "";
+												} 
+								b8.onclick = function() {
+												let result = vfunc("8");
+												exp = exp + "8";
+												exptxt = exptxt + "8";
+												} 
+								b9.onclick = function() {
+												let result = vfunc("9");
+												exp = exp + "9";
+												exptxt = exptxt + "9";
+												}  
+								bt.onclick = function() {
+												let result = vfunc(".");
+												exp = exp + ".";
+												exptxt = exptxt + ".";
+												} 
+								bchar.onclick = function() {
+												let all = document.getElementById("res").value;
+												document.getElementById("res").value = all.slice(0, -1);
+												exp = exp.slice(0, -1);
+												exptxt = exptxt.slice(0, -1);
+												} 
+								bp1.onclick = function() {
+												let result = vfunc("(");
+												exp = exp + "(";
+												exptxt = exptxt + "(";
+												}  
+								bp2.onclick = function() {
+												let result = vfunc(")");
+												exp = exp + ")";
+												exptxt = exptxt + ")";
+												}  
+								sqrt.onclick = function() {
+												
+												let result = vfunc("√(");
+												exp = exp + " Math.sqrt(";
+												exptxt = exptxt + "√(";
+												}  
+								xin2.onclick = function() {
+												let result = vfunc("²");
+												exp = exp + "**2";
+												exptxt = exptxt + "²";
+												}										
+								b1dx.onclick = function() {
+												let result = vfunc("(1/");
+												exp = exp + " (1/";
+												exptxt = exptxt + "(1/";
+												}  
+								bdd.onclick = function() {
+												let result = vfunc("/");
+												exp = exp + "/";
+												exptxt = exptxt + "/";
+												}  
+								bmu.onclick = function() {
+												let result = vfunc("×");
+												exp = exp + "*";
+												exptxt = exptxt + "×";
+												}  
+								bp.onclick = function() {
+												let result = vfunc("+");
+												exp = exp + "+";
+												exptxt = exptxt + "+";
+												}  
+								bm.onclick = function() {
+												let result = vfunc("-");
+												exp = exp + "-";
+												exptxt = exptxt + "-";
+												}  
+								r.onclick = function () {
+												let result1 = eval(exp);
+												document.getElementById("res").value = result1.toFixed(10); 
+												let txtv = document.getElementById("txt").value;
+																								document.getElementById("txt").value = txtv + "\n" + exptxt + " " + "=" + " " + result1.toFixed(10) + "\n----------";
+												exp = "";					
+												exptxt = ""; 																			
+								}  
+								clrt.onclick = function() {
+												document.getElementById("txt").value = "";
+								}  
+							
+							 let i = 0;														
+								hstr.onclick = function() {
+												i+=1;
+												if (i == 1) { 
+																document.getElementById("historylist").style.display = "block";						
+																		
+																i -= 2;					
+																document.getElementById("hstr").innerHTML = "History ×";		 											
+												} 
+												else {																									
+																								document.getElementById("historylist").style.display = "none";	
+																document.getElementById("hstr").innerHTML = "History ∙";		
+												} 
+								}
+								let i1 = 0;
+								bmore.onclick = function() {
+												i1+=1;
+												if (i1 == 1) { 
+																document.getElementById("morelist").style.display = "block";						
+																i1 -= 2;															
+												} 
+												else {																									
+																								document.getElementById("morelist").style.display = "none";	
+												} 
+								} 
+								bper.onclick = function() {
+												let result = vfunc("%");
+												exp = exp + "/100";
+												exptxt = exptxt + "%";
+								} 
+								bpi.onclick = function() {
+												let result = vfunc("π");
+												exp = exp + "3.1415926536";
+												exptxt = exptxt + "3.1415926536";
+								} 
+								be.onclick = function() {
+												let result = vfunc("e");
+												exp = exp + "2.7182818285";
+												exptxt = exptxt + "2.7182818285";
+								} 
+								bfi.onclick = function() {
+												let result = vfunc("φ");
+												exp = exp + "1.6180339887";
+												exptxt = exptxt + "1.6180339887";
+								} 
+								bmd.onclick = function() {
+												let result = vfunc("abs(");
+												exp = exp + "Math.abs(";
+												exptxt = exptxt + "abs(";
+								} 
+								bxsuby.onclick = function() {
+												let result = vfunc("^(");
+												exp = exp + "**(";
+												exptxt = exptxt + "^(";
+								} 
+								bcbrt.onclick = function() {
+												let result = vfunc("∛(");
+												exp = exp + "Math.cbrt(";
+												exptxt = exptxt + "∛(";
+								} 
+								blog.onclick = function() {
+												let result = vfunc("log(");
+												exp = exp + "Math.log(";
+												exptxt = exptxt + "log(";
+								} 
+								bsin.onclick = function() {
+												let result = vfunc("sin(");
+												exp = exp + "Math.sin((Math.PI / 180) *  ";
+												exptxt = exptxt + "deg\nsin(";
+								}
+								bcos.onclick = function() {
+												let result = vfunc("cos(");
+												exp = exp + "Math.cos((Math.PI / 180) *  ";
+												exptxt = exptxt + "deg\ncos(";
+								} 
+								btan.onclick = function() {
+												let result = vfunc("tan(");
+												exp = exp + "Math.tan((Math.PI / 180) *  ";
+												exptxt = exptxt + "deg\ntan(";
+								} 
+								bcot.onclick = function() {
+												let result = vfunc("cot(");
+												exp = exp + "1 / Math.tan((Math.PI / 180) *  ";
+												exptxt = exptxt + "deg\ncot(";
+								} 
+								bsinInRad.onclick = function() {
+												let result = vfunc("sin(");
+												exp = exp + "Math.sin(";
+												exptxt = exptxt + "rad\nsin(";
+								} 
+								bcosInRad.onclick = function() {
+												let result = vfunc("cos(");
+												exp = exp + "Math.cos(";
+												exptxt = exptxt + "rad\ncos(";
+								} 
+								bcot.onclick = function() {
+												let result = vfunc("cot(");
+												exp = exp + "1 / Math.tan(";
+												exptxt = exptxt + "rad\ncot(";
+								} 
+								let n1 = 0;
+								inrad.onclick = function() {
+											n1 += 1;
+											if (n1 == 1) {
+															document.getElementById("inDeg").style.display = "none";
+															document.getElementById("hideInRad").style.display = "block";
+															document.getElementById("inrad").innerHTML = "Rad";
+															n1 -= 2;
+											} 	
+											else {
+															document.getElementById("inDeg").style.display = "block";
+															document.getElementById("hideInRad").style.display = "none";
+															document.getElementById("inrad").innerHTML = "Deg";
+											} 
+								} 
+				</script>
+</body>
+</html>
